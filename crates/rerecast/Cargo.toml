@@ -1,7 +1,7 @@
 [package]
 name = "rerecast"
 description = "Rust port of recastnavigation"
-version = "0.3.2"
+version = "0.4.0"
 authors = { workspace = true }
 edition = { workspace = true }
 license = { workspace = true }
@@ -14,12 +14,13 @@ readme = { workspace = true }
 slotmap = { workspace = true }
 thiserror = { workspace = true }
 anyhow = { workspace = true }
-glam = { workspace = true }
+# as published in 0.4.0, for bevy 0.19
+glam = { version = "0.32", default-features = false }
 bitflags = { workspace = true }
 tracing = { workspace = true, optional = true }
 libm = { workspace = true, optional = true }
 
-bevy_reflect = { workspace = true, optional = true }
+bevy_reflect = { version = "0.19", default-features = false, features = ["glam"], optional = true }
 serde = { workspace = true, optional = true, features = ["derive"] }
 
 [dev-dependencies]
